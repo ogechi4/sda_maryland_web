@@ -1,0 +1,23 @@
+.my-carousel img {
+  height: 100vh;
+  width: 100vw;
+}
+.my-carousel .carousel-indicators button {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+.my-carousel .carousel-caption {
+  bottom: 40%;
+  text-shadow: 1px 1px rgb(194, 185, 185);
+}
+
+.upcoming-event {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 100px 10px 100px;
+  background-color: rgb(247, 236, 223);
+  height: 100px;
+}/*# sourceMappingURL=Home.css.map */
