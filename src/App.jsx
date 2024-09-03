@@ -1,11 +1,10 @@
-import Home from "./Home/Home"
 
 function App() {
 
 
   return (
     <>
-      <Home />
+     <div className="bg-yellow-300">Home</div>
     </>
   )
 }
