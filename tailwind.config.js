@@ -17,6 +17,7 @@ export default {
       },
       colors: {
         bodyColor: "#212428",
+        thickOrange:"#b1712a",
         lightText: "#c4cfde",
         boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
         designColor: "#ff014f",
