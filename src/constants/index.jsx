@@ -55,10 +55,8 @@ export const middleList = [
           "Community Guest Day",
           "Adventist Men Ministry Day",
           "Domestic Violence and Impact on Ministry",
-         
         ],
       },
     ],
   },
- 
 ];
