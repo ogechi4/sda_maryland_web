@@ -8,7 +8,7 @@
 
 .slick-next:before {
   content: "\f105";
-  color: rgba(0, 0, 0, 0.409);
+  color: rgba(0, 0, 0, 0.4078431373);
   font-size: 30px;
   font-family: "Font Awesome 5 Free"; /* Adjust font family for Font Awesome 6 */
   font-weight: 900;
@@ -20,4 +20,14 @@
   width: 11px;
   background-color: #e7ad47;
   border-radius: 50%;
+}
+
+.quoteR {
+  position: relative;
+  left: 0%;
+}
+
+.quoteL {
+  position: relative;
+  right: 0%;
 }/*# sourceMappingURL=Home.css.map */

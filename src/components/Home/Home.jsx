@@ -1,13 +1,15 @@
 import React from "react";
 import { Box, Text, Stack, Flex, Image, Link, Heading, Button, Wrap, Divider, Progress, Grid, GridItem } from "@chakra-ui/react";
 import { TriangleUpIcon } from "@chakra-ui/icons";
+import { IconContext } from "react-icons";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Home.css';
 const Home = () => {
-            const settings = {
+            const slider1 = {
             dots: true,
             infinite: true,
             speed: 500,
@@ -41,6 +43,13 @@ const Home = () => {
                 }
             ]
         };
+        const slider2 = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        }
     
     return (
         <>
@@ -74,7 +83,7 @@ const Home = () => {
                         <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", position: "relative", left: "40%", marginTop: "10px"}}>PROGRAMS & EVENTS</Heading>
                     </Flex>
                     <Box w={"100%"}>
-                        <Slider {...settings}>
+                        <Slider {...slider1}>
                             {Array.from({length: 10}, (x, i) => 
                                 <Flex key={i} direction={"column"} width={"15px"} border={"1px"} borderColor={"black"}alignItems={"center"} gap={"10px"}>
                                     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
@@ -129,7 +138,7 @@ const Home = () => {
                             <Box textAlign={"left"} w={"100%"} gap={"5px"}>
                                 <Text size={"12px"}>Heavens and the earth</Text>
                                 <Text size={"12px"}>24:15 mins</Text>
-                                <Divider orietation="horizontal" w={"100%"} mt={"5px"}/>
+                                <Divider orientation="horizontal" w={"100%"} mt={"5px"}/>
                             </Box>
                         </Box>
                         )}
@@ -144,7 +153,7 @@ const Home = () => {
                             <Box w={"30%"} border={"1px"} borderColor={"black"} h={"100%"}>
                                 <Image w={"100%"} h={"inherit"} src=""/>
                             </Box>
-                            <Box w={"70%"} p={"10px"}>
+                            <Box w={"70%"} p={"10px"} bgColor={"#f9f1e6"}>
                                 <Heading as={"h3"} fontSize={"28px"}>Help human trafficking survivors</Heading>
                                 <Wrap>
                                     <Text>posted by</Text>
@@ -153,7 +162,7 @@ const Home = () => {
                                 </Wrap>
                                 <Heading as={"h2"} fontSize={"40px"}>$6,500.00</Heading>
                                 <Text>Pledged of $15000 goal</Text>
-                                <Progress value={60} size={"lg"}/>
+                                <Progress value={60} size={"lg"} colorScheme={"green"} bgColor={"#D3CFCC"} borderRadius={"4px"}/>
                                 <Grid templateColumns={"repeat(6, 1fr)"} templateRows={"repeat(2, 1fr)"}>
                                     <GridItem colSpan={1} h={10}>
                                         <Heading as={"h2"} fontSize={"40px"}>24</Heading>
@@ -167,12 +176,88 @@ const Home = () => {
                                     <GridItem colSpan={""}>
                                         <Text>days left</Text>
                                     </GridItem>
-                                    <GridItem rowStart={1} colStart={5} colEnd={7} rowSpan={2} alignContent={"center"}>
-                                        <Button colorScheme="orange" size={"lg"} textTransform={"uppercase"}>DONATE NOW</Button>
+                                    <GridItem rowStart={1} colStart={5} colEnd={7} rowSpan={2} alignSelf={"center"} justifySelf={"end"}>
+                                        <Button colorScheme="orange" size={"lg"} textTransform={"uppercase"} rightIcon={<IoIosArrowRoundForward />}>DONATE NOW</Button>
                                     </GridItem>
                                 </Grid>
                             </Box>
                         </Flex>
+                    </Flex>
+                </Stack>
+                <Stack spacing={5} p={"0px 100px 0px 100px"} mt={"20px"}>
+                    <Flex direction={"column"} width={"100%"}>
+                        <Flex direction={"row"} align={"center"}>
+                            <Box display={"flex"} flexDirection={"column"} border={"1px"} w={"100%"} alignItems={"center"}>
+                                <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", marginTop: "10px", position: "relative", left: "45%"}}>OUR GALLERY</Heading>
+                            </Box>
+                        </Flex>
+                        <Flex direction={"row"} wrap={"wrap"} gap={"25px"} mt={"5em"} w={"100%"} border={"1px"} justifyContent={"center"}>
+                            {Array.from({ length: 8}, (i) => 
+                                <Image key={i} h={"15em"} w={["100%", "70%", "45%", "31%", "23.3%"]} src="" border={"1px"}/>
+                            )}
+                        </Flex>
+                    </Flex>
+                </Stack>
+                <Stack spacing={5} p={"0px 100px 0px 100px"} h={"300px"} mt={"20px"} bg={"#f9f1e6"}>
+                    <Flex direction={"column"} width={"100%"}>
+                        <Flex direction={"row"} align={"center"}>
+                            <Box display={"flex"} flexDirection={"column"} border={"1px"} w={"100%"} alignItems={"center"}>
+                                <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", marginTop: "10px", position: "relative", left: "45%"}}>BIBLE VERSES</Heading>
+                            </Box>
+                        </Flex>
+                        <Box display={"flex"} flexDir={"column"} w={"100%"} mt={"30px"} border={"1px"} borderColor={"red"} align={"center"}>
+                            <Slider {...slider2}>
+                                {Array.from({length: 3}, (x, i) => 
+                                    <Flex key={i} direction={"column"}>
+                                        <Box display={"flex"} width={"100%"}>
+                                            <IconContext.Provider value={{className: "quoteL"}}>
+                                                <RiDoubleQuotesL size={"4em"} color="#00000030"/>
+                                            </IconContext.Provider>
+                                            <Text fontSize={"1.7em"} border={"px"} w={"100%"} >
+                                                For God did not send the his Son into the world to condemn the world, but to save the world through Him.
+                                            </Text>
+                                        </Box>
+                                        <Box display={"flex"}>
+                                            <Text fontSize={"1.5em"} color="#00000070" w={"100%"} border={"px"}>−John 3:17</Text>
+                                            <IconContext.Provider value={{className:"quoteR"}}>
+                                                <RiDoubleQuotesR size={"4em"} color="#00000030"/>
+                                            </IconContext.Provider>
+                                        </Box>
+                                </Flex>
+                                )}
+                            </Slider>
+                        </Box>      
+                    </Flex>
+                </Stack>
+                <Stack spacing={5} p={"0px 100px 0px 100px"} h={"300px"} mt={"20px"} bg={"#f9f1e6"}>
+                    <Flex direction={"column"} width={"100%"}>
+                        <Flex direction={"row"} align={"center"}>
+                            <Box display={"flex"} flexDirection={"column"} border={"1px"} w={"100%"} alignItems={"center"}>
+                                <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", marginTop: "10px", position: "relative", left: "45%"}}>OUR MINISTRIES</Heading>
+                            </Box>
+                        </Flex>
+                        <Box display={"flex"} flexDir={"column"} w={"100%"} mt={"30px"} border={"1px"} borderColor={"red"} align={"center"}>
+                            <Slider {...slider2}>
+                                {Array.from({length: 3}, (x, i) => 
+                                    <Flex key={i} direction={"column"}>
+                                        <Box display={"flex"} width={"100%"}>
+                                            <IconContext.Provider value={{className: "quoteL"}}>
+                                                <RiDoubleQuotesL size={"4em"} color="#00000030"/>
+                                            </IconContext.Provider>
+                                            <Text fontSize={"1.7em"} border={"px"} w={"100%"} >
+                                                For God did not send the his Son into the world to condemn the world, but to save the world through Him.
+                                            </Text>
+                                        </Box>
+                                        <Box display={"flex"}>
+                                            <Text fontSize={"1.5em"} color="#00000070" w={"100%"} border={"px"}>−John 3:17</Text>
+                                            <IconContext.Provider value={{className:"quoteR"}}>
+                                                <RiDoubleQuotesR size={"4em"} color="#00000030"/>
+                                            </IconContext.Provider>
+                                        </Box>
+                                </Flex>
+                                )}
+                            </Slider>
+                        </Box>      
                     </Flex>
                 </Stack>
             </Stack>
