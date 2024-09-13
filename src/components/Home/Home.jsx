@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Stack, Flex, Image, Link, Heading, Button, Wrap, Divider, Progress, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Text, Stack, Flex, Image, Link, Heading, Button, Wrap, Divider, Progress, Grid, GridItem, Input } from "@chakra-ui/react";
 import { TriangleUpIcon } from "@chakra-ui/icons";
 import { IconContext } from "react-icons";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Home.css';
+import { mountain } from "../../assets";
 const Home = () => {
             const slider1 = {
             dots: true,
@@ -50,20 +51,65 @@ const Home = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
         }
+        const slider3 = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+        }
     
     return (
         <>
-            <Box direction={"column"} borderColor={"red.200"} border={"1px"} h={"100vh"} w={"100%"}>
-                <Box h={"80%"}>
-                    <Text fontSize={"large"}>
-                        Carousel
-                    </Text>
-                </Box>
+            <Box borderColor={"blue"} border={"1px"}>
+                <Slider {...slider3}>
+                    {Array.from({ length: 3 }, (i) => 
+                        <Flex 
+                            key={i} 
+                            direction={"column"} 
+                            border={"1px"} 
+                            borderColor={"green"} 
+                            justifyContent={"center"} 
+                            alignItems={"center"} 
+                            h={"100vh"} 
+                            w={"100%"}
+                            backgroundImage={mountain}
+                            bgRepeat={"no-repeat"}
+                            bgSize={"cover"}
+                            bgPosition={"center"}
+                        >
+                            <Box 
+                                display={"flex"} 
+                                flexDir={"column"} 
+                                alignItems={"center"} 
+                                justifyContent={"center"} 
+                                h={"100%"} 
+                                w={"100%"}
+                                color={"white"}
+                            >
+                                <Heading as={"h1"} fontSize={"5em"}>Grace and Truth</Heading>
+                                <Wrap fontSize={"1.5em"} textAlign={"center"}>
+                                    <Text>
+                                        For God did not send his son into the world to condemn the world, but to save the world through him.
+                                    </Text>
+                                    <Text fontStyle={"italic"}>John 3:17</Text>
+                                </Wrap>
+                            </Box>
+                        </Flex>
+                    )}
+                </Slider>
             </Box>
             <Stack spacing={5} direction={"column"}>
-                <Flex bgColor={"#f9f1e6"} maxH={"max-content"} direction={"row"} gap={"0px"} h={"100px"} p={"0px 100px 0px 100px"}>
-                    <Box w={"70%"} borderColor={"black"} border={"1px"} h={"inherit"}></Box>
-                    <Box w={"30%"} borderColor={"black"} border={"1px"} h={"inherit"}> </Box>
+                <Flex bgColor={"#f9f1e6"} maxH={"max-content"} direction={"row"} gap={"0px"} h={"150px"} p={"0px 100px 0px 100px"} mb={"30px"}>
+                    <Box  display={"flex"} flexDir={"column"} justifyContent={"center"} w={"70%"} borderColor={"black"} border={"1px"} h={"inherit"}>
+                        <Heading as={"h3"} color={"#999085"} fontSize={"20px"}>UPCOMING EVENT</Heading>
+                        <Heading as={"h2"}>The Law Demands, but Grace Supplies" - Pastor J.P.</Heading>
+                    </Box>
+                    <Box display={"flex"} flexDir={"row"} alignItems={"center"} justifyContent={"flex-end"} w={"30%"} borderColor={"black"} border={"1px"} h={"inherit"}>
+                        <Button colorScheme="orange" color={"black"} size={"lg"} textTransform={"uppercase"} rightIcon={<IoIosArrowRoundForward />}>SUBSCRIBE NOW</Button>
+                    </Box>
                 </Flex>
                 <Stack direction={"row"} wrap={"wrap"} h={""} p={"0px 100px 0px 100px"} justifyContent={"space-between"}>
                 {Array.from({ length: 3 }, (i) => 
@@ -84,7 +130,7 @@ const Home = () => {
                     </Flex>
                     <Box w={"100%"}>
                         <Slider {...slider1}>
-                            {Array.from({length: 10}, (x, i) => 
+                            {Array.from({length: 8}, (x, i) => 
                                 <Flex key={i} direction={"column"} width={"15px"} border={"1px"} borderColor={"black"}alignItems={"center"} gap={"10px"}>
                                     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
                                         <Heading fontSize={"20px"} as={"h2"} mb={"5px"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", position: "relative", left: "40%", marginTop:"5px"}}>JULY 16</Heading>
@@ -229,35 +275,39 @@ const Home = () => {
                         </Box>      
                     </Flex>
                 </Stack>
-                <Stack spacing={5} p={"0px 100px 0px 100px"} h={"300px"} mt={"20px"} bg={"#f9f1e6"}>
+                <Stack spacing={5} p={"0px 100px 0px 100px"} mt={"20px"}>
                     <Flex direction={"column"} width={"100%"}>
                         <Flex direction={"row"} align={"center"}>
                             <Box display={"flex"} flexDirection={"column"} border={"1px"} w={"100%"} alignItems={"center"}>
-                                <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", marginTop: "10px", position: "relative", left: "45%"}}>OUR MINISTRIES</Heading>
+                                <Heading fontSize={"20px"} as={"h2"} _after={{content: `" "`, width: "30px", height: "5px", background:"#919191", display: "block", marginTop: "10px", position: "relative", left: "45%"}} textTransform={"uppercase"}>our ministries</Heading>
                             </Box>
                         </Flex>
-                        <Box display={"flex"} flexDir={"column"} w={"100%"} mt={"30px"} border={"1px"} borderColor={"red"} align={"center"}>
-                            <Slider {...slider2}>
-                                {Array.from({length: 3}, (x, i) => 
-                                    <Flex key={i} direction={"column"}>
-                                        <Box display={"flex"} width={"100%"}>
-                                            <IconContext.Provider value={{className: "quoteL"}}>
-                                                <RiDoubleQuotesL size={"4em"} color="#00000030"/>
-                                            </IconContext.Provider>
-                                            <Text fontSize={"1.7em"} border={"px"} w={"100%"} >
-                                                For God did not send the his Son into the world to condemn the world, but to save the world through Him.
-                                            </Text>
-                                        </Box>
-                                        <Box display={"flex"}>
-                                            <Text fontSize={"1.5em"} color="#00000070" w={"100%"} border={"px"}>−John 3:17</Text>
-                                            <IconContext.Provider value={{className:"quoteR"}}>
-                                                <RiDoubleQuotesR size={"4em"} color="#00000030"/>
-                                            </IconContext.Provider>
-                                        </Box>
-                                </Flex>
-                                )}
-                            </Slider>
-                        </Box>      
+                    </Flex>
+                    <Flex direction={"row"} wrap={"wrap"} h={"fit-to-content"} w={"100%"} border={"1px"} justifyContent={"space-between"}>
+                    {Array.from({ length: 3 }, (i) => 
+                        <Stack border={"1px"} key={i} borderColor={"black"} h={"max-content"} w={"32%"} display={"flex"} flexDirection={"column"} spacing={3}>
+                            <Image h={'100px'} w={"inherit"} objectFit={"cover"} src="" mb={"10px"}></Image>
+                            <Heading as='h2' size='md' textTransform={"uppercase"}>Guided by the Holy Spirit</Heading>
+                            <Text as={"p"}>May our good God guide into all truths and prosper you in all your way. Take a deeper closer walk daily</Text>
+                            <Text fontSize={"12px"}>
+                                <Link>view details →</Link>
+                            </Text>
+                        </Stack>
+                    )}
+                    </Flex>
+                </Stack>
+                <Stack spacing={5} p={"0px 100px 0px 100px"} mt={"20px"} bg={"#f9f1e6"} h={"100px"}>
+                    <Flex direction={"row"} justifyContent={"space-between"} border={"1px"} h={"100%"} p={5}>
+                        <Box w={"23%"} mr={"20px"}>
+                            <Heading as={"h2"} fontSize={"1.5em"}>SUBSCRIBE</Heading>
+                            <Text as={"h2"} fontSize={"1.5em"} color={"#999085"}>TO OUR NEWSLETTER</Text>
+                        </Box>
+                        <Box w={"55%"}>
+                            <Input placeholder="Enter email" size={"lg"} bgColor={"#ffffff"} focusBorderColor="gray.300"/>
+                        </Box>
+                        <Box w={"17%"}>
+                            <Button colorScheme="orange" color={"black"} size={"lg"} textTransform={"uppercase"} rightIcon={<IoIosArrowRoundForward />}>SUBSCRIBE NOW</Button>
+                        </Box>
                     </Flex>
                 </Stack>
             </Stack>
