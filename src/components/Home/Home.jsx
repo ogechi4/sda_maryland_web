@@ -63,7 +63,7 @@ const Home = () => {
     
     return (
         <>
-            <Box borderColor={"blue"} border={"1px"}>
+            <Box borderColor={"blue"} border={"1px"} className="my-carousel" >
                 <Slider {...slider3}>
                     {Array.from({ length: 3 }, (i) => 
                         <Flex 

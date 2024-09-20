@@ -14,16 +14,14 @@
   font-weight: 900;
 }
 
-button.slick-arrow.slick-next {
-  right: 10%;
+.my-carousel button.slick-arrow.slick-prev {
+  left: 10%;
   width: 40px;
   height: 40px;
-  cursor: pointer;
   z-index: 1;
 }
-
-button.slick-arrow.slick-prev {
-  left: 10%;
+.my-carousel button.slick-arrow.slick-next {
+  right: 10%;
   width: 40px;
   height: 40px;
   z-index: 1;
