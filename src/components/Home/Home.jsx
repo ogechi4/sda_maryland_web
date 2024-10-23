@@ -4,9 +4,11 @@ import { TriangleUpIcon } from "@chakra-ui/icons";
 import { IconContext } from "react-icons";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { Fancybox } from "@fancyapps/ui";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import './Home.css';
 import { mountain } from "../../assets";
 const Home = () => {
@@ -60,6 +62,8 @@ const Home = () => {
             autoplay: true,
             autoplaySpeed: 5000,
         }
+    //initiate fancy box
+    Fancybox.bind("[data-fancybox]", {})
     
     return (
         <>
@@ -239,7 +243,7 @@ const Home = () => {
                         </Flex>
                         <Flex direction={"row"} wrap={"wrap"} gap={"25px"} mt={"5em"} w={"100%"} border={"1px"} justifyContent={"center"}>
                             {Array.from({ length: 8}, (i) => 
-                                <Image key={i} h={"15em"} w={["100%", "70%", "45%", "31%", "23.3%"]} src="" border={"1px"}/>
+                                <Image data-fancybox="gallery" key={i} h={"15em"} w={["100%", "70%", "45%", "31%", "23.3%"]} src={mountain} border={"1px"}/>
                             )}
                         </Flex>
                     </Flex>
@@ -286,7 +290,7 @@ const Home = () => {
                     <Flex direction={"row"} wrap={"wrap"} h={"fit-to-content"} w={"100%"} border={"1px"} justifyContent={"space-between"}>
                     {Array.from({ length: 3 }, (i) => 
                         <Stack border={"1px"} key={i} borderColor={"black"} h={"max-content"} w={"32%"} display={"flex"} flexDirection={"column"} spacing={3}>
-                            <Image h={'100px'} w={"inherit"} objectFit={"cover"} src="" mb={"10px"}></Image>
+                            <Image h={'100px'} w={"100%"} objectFit={"cover"} src="" mb={"10px"}></Image>
                             <Heading as='h2' size='md' textTransform={"uppercase"}>Guided by the Holy Spirit</Heading>
                             <Text as={"p"}>May our good God guide into all truths and prosper you in all your way. Take a deeper closer walk daily</Text>
                             <Text fontSize={"12px"}>
@@ -298,14 +302,14 @@ const Home = () => {
                 </Stack>
                 <Stack spacing={5} p={"0px 100px 0px 100px"} mt={"20px"} bg={"#f9f1e6"} h={"100px"}>
                     <Flex direction={"row"} justifyContent={"space-between"} border={"1px"} h={"100%"} p={5}>
-                        <Box w={"23%"} mr={"20px"}>
+                        <Box w={"22%"} mr={"20px"}>
                             <Heading as={"h2"} fontSize={"1.5em"}>SUBSCRIBE</Heading>
                             <Text as={"h2"} fontSize={"1.5em"} color={"#999085"}>TO OUR NEWSLETTER</Text>
                         </Box>
                         <Box w={"55%"}>
                             <Input placeholder="Enter email" size={"lg"} bgColor={"#ffffff"} focusBorderColor="gray.300"/>
                         </Box>
-                        <Box w={"17%"}>
+                        <Box w={"18%"}>
                             <Button colorScheme="orange" color={"black"} size={"lg"} textTransform={"uppercase"} rightIcon={<IoIosArrowRoundForward />}>SUBSCRIBE NOW</Button>
                         </Box>
                     </Flex>

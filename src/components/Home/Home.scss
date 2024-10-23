@@ -16,6 +16,7 @@
     font-weight: 900;
 }
 
+//Top carousel
 .my-carousel {
     button.slick-arrow.slick-prev {
         left: 10%;
@@ -29,6 +30,27 @@
         height: 40px;
         z-index: 1;
     }
+    .slick-dots li button:first-child::before {
+        content: "";
+        height: 10px;
+        width:  10px;
+        background-color: rgba(0,0,0,0);
+        border-radius: 50%;
+        border: 1px solid #fff;
+        top: -300%;
+        z-index: 1;
+    }
+    
+    .slick-dots li.slick-active button:first-child::before {
+        content: "";
+        height: 12px;
+        width:  12px;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid white;
+        top: -300%;
+        z-index: 1;
+    }
 }
 
 
@@ -40,27 +62,7 @@
     border-radius: 50%;
 }
 
-.slick-dots li button:first-child::before {
-    content: "";
-    height: 10px;
-    width:  10px;
-    background-color: rgba(0,0,0,0);
-    border-radius: 50%;
-    border: 1px solid #fff;
-    top: -300%;
-    z-index: 1;
-}
 
-.slick-dots li.slick-active button:first-child::before {
-    content: "";
-    height: 12px;
-    width:  12px;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid white;
-    top: -300%;
-    z-index: 1;
-}
 .quoteR {
     position: relative;
     left: 0%;
