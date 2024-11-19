@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
           {navLinksdata.map(({ _id, title, link }) => (
             <li
-              className="text-base font-normal text-white tracking-wide cursor-pointer hover:text-purple-500 duration-300"
+              className="text-base font-normal text-white tracking-wide cursor-pointer hover:text-orange-500 duration-300"
               key={_id}
             >
               <Link

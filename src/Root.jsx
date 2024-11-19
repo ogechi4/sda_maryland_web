@@ -1,14 +1,16 @@
 import React from 'react';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-// Other imports
+import { Outlet } from "react-router-dom";
+
+
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
-     <Navbar/>
+      <Navbar/>
       <main className="flex-grow">
-        {/* Other content/components */}
+        <Outlet />
       </main>
       <Footer />
     </div>

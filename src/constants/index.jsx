@@ -2,10 +2,15 @@ export const navLinksdata = [
   {
     _id: 1001,
     title: "Home",
-    link: "home",
+    link: "/",
   },
   {
     _id: 1002,
+    title: "About",
+    link: "about",
+  },
+  {
+    _id: 1003,
     title: "Sermons",
     link: "sermons",
   },
@@ -16,13 +21,13 @@ export const navLinksdata = [
     link: "events",
   },
   {
-    _id: 1003,
+    _id: 1005,
     title: "Pages",
     link: "pages",
   },
 
   {
-    _id: 1004,
+    _id: 1006,
     title: "Contact",
     link: "contact",
   },
@@ -55,10 +60,8 @@ export const middleList = [
           "Community Guest Day",
           "Adventist Men Ministry Day",
           "Domestic Violence and Impact on Ministry",
-         
         ],
       },
     ],
   },
- 
 ];
